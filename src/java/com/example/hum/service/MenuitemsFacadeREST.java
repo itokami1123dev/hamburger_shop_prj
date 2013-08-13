@@ -37,8 +37,10 @@ public class MenuitemsFacadeREST extends AbstractFacade<Menuitems> {
     @Override
     @Path("{id}")
     @Consumes({ "application/json"})
-	public void edit(Menuitems entity) {
+    @Produces({"application/json"})
+	public Menuitems edit(Menuitems entity) {
 		super.edit(entity);
+		return entity;
 	}
 
 	@DELETE

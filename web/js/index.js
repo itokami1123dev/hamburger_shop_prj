@@ -17,11 +17,11 @@ var MenuItem = Backbone.Model.extend({
     toggleChecked: function(){
 		var saveItemDid = _.bind( this.saveItemDid, this);
 		var saveItemError = _.bind( this.saveItemError, this);
-		this.save({"selected": !this.get("selected")},{success:saveItemDid,error: saveItemError}); // サーバのデータと同期
+		var putData={"selected": !this.get("selected")};
+		this.save( putData, {success:saveItemDid,error: saveItemError});
     },
 	saveItemDid:function(model, resp){
 		console.log("saveItemError model=",model,' resp='+resp);
-		this.fetch();
 	},
 	saveItemError: function(model, resp){ 
 		console.log("createItemError model=",model,' resp='+resp);
