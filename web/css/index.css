@@ -1,0 +1,76 @@
+html,body{
+    font-size: 18px;
+}
+
+div,table,section{
+    box-sizing:border-box;
+}
+
+#application{
+    width: 360px;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow:0 2px 4px rgba( 0, 0, 0, 0.6);
+}
+
+/* h1.menuTitle */
+.menu-title{
+    margin:0;
+    padding: 0 18px;
+    font-size:1.1em;
+}
+
+/* table#menu-table メニュー表 */
+.menu-table{
+    width:340px;
+    margin:0 auto;
+    /* border:1px solid rgba(0,0,0,0.6); */
+    border-spacing:0;
+    box-shadow:0 2px 4px rgba( 0, 0, 0, 0.6);
+}
+.menu-table tr{
+    background-color:rgba( 248, 250, 252, 1.0);
+    box-shadow:0 1px 2px rgba( 255, 255, 255, 0.6) inset;
+    -webkit-transition-duration:0.3s;
+}
+.menu-table tr.new-btn-line{
+    background-color:rgba( 255, 250, 210, 1.0);
+}
+.menu-table tr.on{
+    background-color:rgba( 210, 250, 255, 1.0);
+}
+.menu-table td{
+	box-sizing: border-box;
+    padding:4px;
+    text-shadow:0 1px 1px rgba( 255, 255, 255, 0.6);
+    border-bottom:1px solid rgba(0,0,0,0.6);
+	text-align: center;
+}
+.menu-table td:nth-child(1){
+	width:80px;
+}
+.menu-table td:nth-child(2){
+	text-align: left;
+	width:140px;
+}
+.menu-table td:nth-child(2) input{
+	width:120px;
+}
+.menu-table td:nth-child(3) input{
+	width:36px;
+	text-align: right;
+}
+.menu-table td:nth-child(3){
+	width:50px;
+}
+.menu-table tr:last-child td{
+    border-bottom:none;
+}
+
+/* div#div 合計表示 */
+#sum-price-pane{
+    width:240px;
+    margin:16px auto;
+    padding:0 4px;
+    text-align:right;
+}
