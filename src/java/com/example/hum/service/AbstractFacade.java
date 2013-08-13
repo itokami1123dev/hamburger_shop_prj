@@ -1,16 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.example.hum.service;
 
 import java.util.List;
 import javax.persistence.EntityManager;
 
-/**
- *
- * @author ehara
- */
 public abstract class AbstractFacade<T> {
 	private Class<T> entityClass;
 
@@ -21,9 +13,7 @@ public abstract class AbstractFacade<T> {
 	protected abstract EntityManager getEntityManager();
 
 	public T create(T entity) {
-	//public void create(T entity) {
 		getEntityManager().persist(entity);
-
 		return entity;
 	}
 
