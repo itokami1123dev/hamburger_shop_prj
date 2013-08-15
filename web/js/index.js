@@ -16,15 +16,11 @@ var MenuItem = Backbone.Model.extend({
     },
     toggleChecked: function(){
 		var saveItemDid = _.bind( this.saveItemDid, this);
-		var saveItemError = _.bind( this.saveItemError, this);
 		var putData={"selected": !this.get("selected")};
-		this.save( putData, {success:saveItemDid,error: saveItemError});
+		this.save( putData, {success:saveItemDid});
     },
 	saveItemDid:function(model, resp){
 		console.log("saveItemError model=",model,' resp='+resp);
-	},
-	saveItemError: function(model, resp){ 
-		console.log("createItemError model=",model,' resp='+resp);
 	}
 });
 
@@ -46,14 +42,10 @@ var MenuList = Backbone.Collection.extend({
 			selected:false
 		};
 		var createDid = _.bind( this.createDid, this);
-		var createError = _.bind( this.createError, this);
-		this.create(menuItemData,{ success:createDid, error:createError });
+		this.create(menuItemData,{ success:createDid});
 	},
 	createDid: function(model, resp){
 		console.log("createDid model=",model,' resp='+resp);
-	},
-	createError: function(model, resp){ 
-		console.log("createError model=",model,' resp='+resp);
 	}
 });
 
@@ -125,9 +117,7 @@ var MenuItemView = Backbone.View.extend({
 var MenuListView = Backbone.View.extend({
     el:'#menu-table',
     initialize: function(options) {
-        this.listenTo( this.collection, 'reset'  , this.listRender);
-        this.listenTo( this.collection, 'add'    , this.listRender);
-		this.listenTo( this.collection, 'destroy', this.listRender);
+        this.listenTo( this.collection, 'reset add destroy', this.listRender);
     },
     listRender: function(){
 		this.$el.empty();
@@ -145,10 +135,7 @@ var SumPriceView = Backbone.View.extend({
     el: '#sum-price-pane',
     initialize: function(options){
         this.template = _.template( $('#' + this.el.id + '-template').html() );
-        this.listenTo( this.collection, 'reset', this.render);
-        this.listenTo( this.collection, 'change', this.render);
-        this.listenTo( this.collection, 'add', this.render);
-		this.listenTo( this.collection, 'destroy', this.render);
+        this.listenTo( this.collection, 'reset change add destroy', this.render);
     },
     render: function(){
         var menuList = this.collection;
@@ -164,7 +151,6 @@ var ApplicationView = Backbone.View.extend({
     initialize: function(options){
        this.collection = new MenuList();
        var op = { collection:this.collection};
-
 	   this.menuNewItemView = new MenuNewItemView(op);
        this.menuListView = new MenuListView(op);
        this.sumPriceView = new SumPriceView(op);
