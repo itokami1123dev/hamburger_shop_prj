@@ -1,0 +1,7 @@
+CREATE TABLE menuitems (
+id SERIAL,
+name VARCHAR(30) NOT NULL,
+price NUMERIC NOT NULL,
+selected BOOLEAN NOT NULL,
+PRIMARY KEY (id)
+);
