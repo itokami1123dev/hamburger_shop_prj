@@ -29,14 +29,15 @@ var MenuItem = Backbone.Model.extend({
 			selected: false
 		};
     },
-			
-    toggleChecked: function(){
-		var saveItemDid = _.bind( this.saveItemDid, this);
+	
+	/**
+	 * ## メニュー項目のトグル選択
+	 */
+    toggleSelected: function(){
+
 		var putData={"selected": !this.get("selected")};
-		this.save( putData, {success:saveItemDid});
-    },
-			
-	saveItemDid: function(model, resp){
-		console.log("saveItemError model=",model,' resp='+resp);
-	}
+		this.save( putData, {wait: true});
+		
+    }
+	
 });
