@@ -1,0 +1,11 @@
+{
+	"framework" : "jasmine",
+	"launch_in_dev" : [ "chrome" ],
+	"src_files" : [
+		"js/lib/jquery-2.0.3.min.js",
+		"js/lib/underscore-min.js",
+		"js/lib/backbone-min.js",
+		"js/src/MenuItem.js",
+		"js/spec/MenuItemSpec.js"
+	]
+}
