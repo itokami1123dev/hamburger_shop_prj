@@ -51,22 +51,16 @@ describe ("MenuItem", function() {
 			expect(menuItem).toBeDefined();
 			expect(menuItem.get("selected")).toBeFalsy();
 						
-			menuItem.toggleSelected();
-			server.respond([
+			server.respondWith([
 					200,
 					{"Content-Type": "application/json"},
 					'{"id":1,"name":"test","price":100,"selected":true}'
 				]);
+			menuItem.toggleSelected();
+			server.respond();
+
 			expect(menuItem.get("selected")).toBeTruthy();
 			
-			
-			menuItem.toggleSelected();
-			server.respond([
-					200,
-					{"Content-Type": "application/json"},
-					'{"id":1,"name":"test","price":100,"selected":false}'
-				]);
-			expect(menuItem.get("selected")).toBeFalsy();
 			
 		});
 		
