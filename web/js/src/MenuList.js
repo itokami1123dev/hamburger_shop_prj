@@ -21,6 +21,7 @@ var MenuList = Backbone.Collection.extend({
 	},
 	createDid: function(model, resp){
 		console.log("createDid model=",model,' resp='+resp);
-	}
+	},
+	comparator: 'id'
 });
 

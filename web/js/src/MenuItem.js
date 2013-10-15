@@ -2,9 +2,9 @@
  * ## メニュー表項目
  * 
  * ### attributes
- * - name     string型  ハンバーガー名
- * - price    number型  お値段       
- * - selected boolean型 選択フラグ    
+ * - name:     string型  ハンバーガー名
+ * - price:    number型  お値段       
+ * - selected: boolean型 選択フラグ    
  * 
  * @class MenuItem
  * @constructor
@@ -14,13 +14,14 @@ var MenuItem = Backbone.Model.extend({
 	/**
 	 * ## 属性情報の初期化
 	 * 
-	 * ### attributes default value
-	 * - name     : ""
-	 * - price    : 0
-	 * - selected : false
 	 * 
 	 * @method defaults
 	 * @return {object} 初期値
+	 * 
+	 * - object.name: ""  
+	 * - object.price: 0  
+	 * - object.selected: false  
+	 * 
 	 */
     defaults: function(){
 		return { 
@@ -32,6 +33,9 @@ var MenuItem = Backbone.Model.extend({
 	
 	/**
 	 * ## メニュー項目のトグル選択
+	 * 
+	 * @method toggleSelected
+	 * 
 	 */
     toggleSelected: function(){
 

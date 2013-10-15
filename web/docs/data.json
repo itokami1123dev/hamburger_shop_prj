@@ -1,0 +1,58 @@
+{
+    "project": {
+        "name": "hamburger_shop_prj",
+        "description": "Sample Backbone and JavaEE.",
+        "version": "0.1.0",
+        "url": ""
+    },
+    "files": {
+        "js/src/MenuItem.js": {
+            "name": "js/src/MenuItem.js",
+            "modules": {},
+            "classes": {
+                "MenuItem": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "MenuItem": {
+            "name": "MenuItem",
+            "shortname": "MenuItem",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "js/src/MenuItem.js",
+            "line": 1,
+            "description": "## メニュー表項目\n\n### attributes\n- name:     string型  ハンバーガー名\n- price:    number型  お値段       \n- selected: boolean型 選択フラグ",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "js/src/MenuItem.js",
+            "line": 14,
+            "description": "## 属性情報の初期化",
+            "itemtype": "method",
+            "name": "defaults",
+            "return": {
+                "description": "初期値\n\n- object.name: \"\"  \n- object.price: 0  \n- object.selected: false",
+                "type": "Object"
+            },
+            "class": "MenuItem"
+        },
+        {
+            "file": "js/src/MenuItem.js",
+            "line": 34,
+            "description": "## メニュー項目のトグル選択",
+            "itemtype": "method",
+            "name": "toggleSelected",
+            "class": "MenuItem"
+        }
+    ],
+    "warnings": []
+}

@@ -25,7 +25,7 @@ var MenuItemView = Backbone.View.extend({
     },
     onClick_menuItem: function(event){
         var menuItem = this.model;
-        menuItem.toggleChecked();
+        menuItem.toggleSelected();
     },
     onClick_DeleteBtn: function(event){
 		event.stopPropagation();

@@ -1,0 +1,10 @@
+{
+    "name": "hamburger_shop_prj",
+    "description": "Sample Backbone and JavaEE.",
+    "version": "0.1.0",
+    "url": "",
+    "options": {
+        "outdir": "./docs",
+        "paths": [ "./js/lib", "./js/src" ]
+    }
+}
