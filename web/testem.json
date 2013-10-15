@@ -6,7 +6,8 @@
 		"js/lib/underscore-min.js",
 		"js/lib/backbone-min.js",
 		"js/src/MenuItem.js",
+		"js/src/MenuList.js",
 		"js/spec/sinon-1.7.3.js",
-		"js/spec/MenuItemSpec.js"
+		"js/spec/*Spec.js"
 	]
 }

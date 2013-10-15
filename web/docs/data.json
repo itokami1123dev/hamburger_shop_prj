@@ -14,6 +14,15 @@
             },
             "fors": {},
             "namespaces": {}
+        },
+        "js/src/MenuList.js": {
+            "name": "js/src/MenuList.js",
+            "modules": {},
+            "classes": {
+                "MenuList": 1
+            },
+            "fors": {},
+            "namespaces": {}
         }
     },
     "modules": {},
@@ -28,14 +37,29 @@
             "extension_for": [],
             "file": "js/src/MenuItem.js",
             "line": 1,
-            "description": "## メニュー表項目\n\n### attributes\n- name:     string型  ハンバーガー名\n- price:    number型  お値段       \n- selected: boolean型 選択フラグ",
-            "is_constructor": 1
+            "description": "メニュー表項目\n\n# attributes\n- name:     string型  ハンバーガー名\n- price:    number型  お値段       \n- selected: boolean型 選択フラグ",
+            "is_constructor": 1,
+            "extends": "Backbone.Model"
+        },
+        "MenuList": {
+            "name": "MenuList",
+            "shortname": "MenuList",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "js/src/MenuList.js",
+            "line": 1,
+            "description": "メニュー表一覧",
+            "is_constructor": 1,
+            "extends": "Backbone.Collection"
         }
     },
     "classitems": [
         {
             "file": "js/src/MenuItem.js",
-            "line": 14,
+            "line": 16,
             "description": "## 属性情報の初期化",
             "itemtype": "method",
             "name": "defaults",
@@ -47,11 +71,62 @@
         },
         {
             "file": "js/src/MenuItem.js",
-            "line": 34,
+            "line": 35,
             "description": "## メニュー項目のトグル選択",
             "itemtype": "method",
             "name": "toggleSelected",
             "class": "MenuItem"
+        },
+        {
+            "file": "js/src/MenuList.js",
+            "line": 11,
+            "description": "メニュー表項目を明細modelとして格納",
+            "itemtype": "property",
+            "name": "model",
+            "type": "{MenuItem}",
+            "class": "MenuList"
+        },
+        {
+            "file": "js/src/MenuList.js",
+            "line": 19,
+            "description": "メニュー表項目の昇順ソート項目",
+            "itemtype": "property",
+            "name": "comparator",
+            "type": "{string}",
+            "default": "'id'",
+            "class": "MenuList"
+        },
+        {
+            "file": "js/src/MenuList.js",
+            "line": 28,
+            "description": "選択中メニューの合計金額を算出",
+            "itemtype": "method",
+            "name": "sumPrice",
+            "return": {
+                "description": "合計金額",
+                "type": "Number"
+            },
+            "class": "MenuList"
+        },
+        {
+            "file": "js/src/MenuList.js",
+            "line": 47,
+            "description": "メニュー登録",
+            "itemtype": "method",
+            "name": "createMenu",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "メニュー名",
+                    "type": "String"
+                },
+                {
+                    "name": "price",
+                    "description": "金額",
+                    "type": "Number"
+                }
+            ],
+            "class": "MenuList"
         }
     ],
     "warnings": []

@@ -1,5 +1,5 @@
 /**
-* ハンバーガーメニュー各項目の仕様確認
+* メニュー表項目情報の仕様確認
 */
 describe ("MenuItem", function() {
 	
@@ -23,7 +23,7 @@ describe ("MenuItem", function() {
 		});
 	});
 	
-	describe( "メニュー選択時", function(){
+	describe( "メニュー項目選択時", function(){
 		var menuItem,server;
 		
 		beforeEach( function(){

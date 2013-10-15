@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>js/src/MenuItem.js - hamburger_shop_prj</title>
+    <title>js/src/MenuList.js - hamburger_shop_prj</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -84,58 +84,76 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: js/src/MenuItem.js</h1>
+                        <h1 class="file-heading">File: js/src/MenuList.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
 /**
- * メニュー表項目
+ * メニュー表一覧
  * 
- * # attributes
- * - name:     string型  ハンバーガー名
- * - price:    number型  お値段       
- * - selected: boolean型 選択フラグ    
- * 
- * @class MenuItem
+ * @class MenuList
  * @constructor
- * @extends Backbone.Model
+ * @extends Backbone.Collection
  *
  */
-var MenuItem = Backbone.Model.extend({
-	
-	/**
-	 * ## 属性情報の初期化
-	 * 
-	 * @method defaults
-	 * @return {object} 初期値
-	 * 
-	 * - object.name: &quot;&quot;  
-	 * - object.price: 0  
-	 * - object.selected: false  
-	 * 
-	 */
-    defaults: function(){
-		return { 
-			name: &quot;&quot;,
-			price: 0 ,
-			selected: false
-		};
-    },
-	
-	/**
-	 * ## メニュー項目のトグル選択
-	 * 
-	 * @method toggleSelected
-	 * 
-	 */
-    toggleSelected: function(){
+var MenuList = Backbone.Collection.extend({
 
-		var putData={&quot;selected&quot;: !this.get(&quot;selected&quot;)};
-		this.save( putData, {wait: true});
-		
-    }
+	/**
+	 * メニュー表項目を明細modelとして格納
+	 * 
+	 * @property model
+	 * @type {MenuItem}
+	 */
+    model: MenuItem,
+    
+	/**
+	 * メニュー表項目の昇順ソート項目
+	 *
+	 * @property comparator
+	 * @type {string}
+	 * @default &#x27;id&#x27;
+	 */
+	comparator: &#x27;id&#x27;
 	
+	/**
+	 * 選択中メニューの合計金額を算出
+	 *
+	 * @method sumPrice 
+	 * @return {number} 合計金額
+	 */
+    sumPrice: function(){
+
+        var sum = 0,
+        	selectedMenuItems = this.where({ selected:true });
+
+        _.each( selectedMenuItems, function( model){
+            sum += model.get( &quot;price&quot;);
+        });
+
+        return sum;
+
+    },
+
+    /**
+     * メニュー登録
+     *
+	 * @method createMenu
+	 * @param {String} name メニュー名
+	 * @param {number} price 金額 
+     */
+	createMenu: function(name,price){
+		var menuItemData = {
+			name:name,
+			price:price,
+			selected:false
+		};
+
+		this.create(menuItemData, {wait: true});
+				
+	},
+
 });
+
 
     </pre>
 </div>

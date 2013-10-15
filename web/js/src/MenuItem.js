@@ -1,19 +1,20 @@
 /**
- * ## メニュー表項目
+ * メニュー表項目情報
  * 
- * ### attributes
+ * # attributes
  * - name:     string型  ハンバーガー名
  * - price:    number型  お値段       
  * - selected: boolean型 選択フラグ    
  * 
  * @class MenuItem
  * @constructor
+ * @extends Backbone.Model
+ *
  */
 var MenuItem = Backbone.Model.extend({
 	
 	/**
 	 * ## 属性情報の初期化
-	 * 
 	 * 
 	 * @method defaults
 	 * @return {object} 初期値
