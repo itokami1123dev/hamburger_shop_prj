@@ -19,4 +19,32 @@ describe ( "MenuList", function() {
 		
 	});
 
+	describe( "新規メニュー表登録", function() {
+
+		it( "サーバより返却された名称と金額が設定されること", function(){
+			
+			server = sinon.fakeServer.create();
+
+			var menuList = new MenuList();
+			menuList.url = "/unitTestUrl";
+			
+			server.respondWith([
+					200,
+					{"Content-Type": "application/json"},
+					'{"id":123,"name":"sevNam","price":1005,"selected":false}'
+				]);
+			menuList.createMenu( 'test', 1000);
+			server.respond();
+
+			expect( menuList.size()).toBe( 1);
+
+			var model = menuList.get(123);
+			expect( model.get("name")  ).toBe( "sevNam");
+			expect( model.get("price") ).toBe( 1005);
+
+		})
+
+	});
+
+
 });
