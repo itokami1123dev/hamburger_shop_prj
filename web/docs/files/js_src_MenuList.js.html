@@ -41,6 +41,8 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="../classes/ApplicationView.html">ApplicationView</a></li>
+            
                 <li><a href="../classes/MenuItem.html">MenuItem</a></li>
             
                 <li><a href="../classes/MenuList.html">MenuList</a></li>
@@ -89,7 +91,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /**
- * メニュー表一覧
+ * メニュー表一覧情報
  * 
  * @class MenuList
  * @constructor
@@ -113,7 +115,7 @@ var MenuList = Backbone.Collection.extend({
 	 * @type {string}
 	 * @default &#x27;id&#x27;
 	 */
-	comparator: &#x27;id&#x27;
+	comparator: &#x27;id&#x27;,
 	
 	/**
 	 * 選択中メニューの合計金額を算出
@@ -121,18 +123,18 @@ var MenuList = Backbone.Collection.extend({
 	 * @method sumPrice 
 	 * @return {number} 合計金額
 	 */
-    sumPrice: function(){
+	sumPrice: function(){
 
-        var sum = 0,
-        	selectedMenuItems = this.where({ selected:true });
+		var sum = 0,
+		selectedMenuItems = this.where({ selected:true });
 
-        _.each( selectedMenuItems, function( model){
-            sum += model.get( &quot;price&quot;);
-        });
+		_.each( selectedMenuItems, function( model){
+			sum += model.get( &quot;price&quot;);
+		});
 
-        return sum;
+		return sum;
 
-    },
+	},
 
     /**
      * メニュー登録
@@ -142,6 +144,7 @@ var MenuList = Backbone.Collection.extend({
 	 * @param {number} price 金額 
      */
 	createMenu: function(name,price){
+
 		var menuItemData = {
 			name:name,
 			price:price,
@@ -153,6 +156,7 @@ var MenuList = Backbone.Collection.extend({
 	},
 
 });
+debugger;
 
 
     </pre>

@@ -6,6 +6,15 @@
         "url": ""
     },
     "files": {
+        "js/src/ApplicationView.js": {
+            "name": "js/src/ApplicationView.js",
+            "modules": {},
+            "classes": {
+                "ApplicationView": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "js/src/MenuItem.js": {
             "name": "js/src/MenuItem.js",
             "modules": {},
@@ -27,6 +36,19 @@
     },
     "modules": {},
     "classes": {
+        "ApplicationView": {
+            "name": "ApplicationView",
+            "shortname": "ApplicationView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "js/src/ApplicationView.js",
+            "line": 1,
+            "description": "ハンバーガーショップアプリケーションクラス",
+            "is_constructor": 1
+        },
         "MenuItem": {
             "name": "MenuItem",
             "shortname": "MenuItem",
@@ -37,7 +59,7 @@
             "extension_for": [],
             "file": "js/src/MenuItem.js",
             "line": 1,
-            "description": "メニュー表項目\n\n# attributes\n- name:     string型  ハンバーガー名\n- price:    number型  お値段       \n- selected: boolean型 選択フラグ",
+            "description": "メニュー表項目情報\n\n# attributes\n- name:     string型  ハンバーガー名\n- price:    number型  お値段       \n- selected: boolean型 選択フラグ",
             "is_constructor": 1,
             "extends": "Backbone.Model"
         },
@@ -51,7 +73,7 @@
             "extension_for": [],
             "file": "js/src/MenuList.js",
             "line": 1,
-            "description": "メニュー表一覧",
+            "description": "メニュー表一覧情報",
             "is_constructor": 1,
             "extends": "Backbone.Collection"
         }
