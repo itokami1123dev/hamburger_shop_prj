@@ -64,5 +64,4 @@ var MenuList = Backbone.Collection.extend({
 	},
 
 });
-debugger;
 
