@@ -1,3 +1,8 @@
+/**
+* ハンバーガーショップアプリケーションクラス
+* @class ApplicationView
+* @constructor 
+*/
 var ApplicationView = Backbone.View.extend({
 	el: '#application',
 	initialize: function(options){
