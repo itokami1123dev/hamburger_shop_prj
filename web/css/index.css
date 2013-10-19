@@ -1,5 +1,12 @@
 html,body{
     font-size: 18px;
+    height: 100%;
+}
+
+body{
+    background-image: -webkit-linear-gradient(top, #f2f5f6, #c8d7dc);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 div,table,section{
