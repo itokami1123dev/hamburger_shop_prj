@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 	<h:head>
-		<title>はんばーが</title>
+		<title>hamburger_shop_prj</title>
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
                 
 		<script type="text/javascript" src="js/lib/jquery-2.0.3.min.js"></script>
@@ -25,11 +25,14 @@
 	</h:head>
 	<h:body>
 		<div id="application" >
+			<header>
+				hamburger_shop_prj
+			</header>
 			<table id="menu-table-new-item"  class="menu-table" >
 				<tr class="new-btn-line" >
 					<td> <button data-tag-id="new-btn" >追加</button> </td>
 					<td><input data-tag-id="new-name" type="text" value="" /></td>
-					<td><input data-tag-id="new-price" type="text" value="" /></td>
+					<td><input data-tag-id="new-price" type="number" value="" /></td>
 					<td></td>
 				</tr>
 			</table>
